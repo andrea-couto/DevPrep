@@ -10,13 +10,39 @@ import SwiftUI
 struct QuestionListView: View
 {
     @StateObject private var viewModel = ViewModel()
+    @State private var isExpanded = false
+    @State private var selectedFilter: QuestionType = .all
 
     var body: some View {
         NavigationStack
         {
             List
             {
-                ForEach(Array(viewModel.groupedQuestions), id: \.key)
+                Section(header: Text("Filter"))
+                {
+                    DisclosureGroup("\(selectedFilter.rawValue)", isExpanded: $isExpanded)
+                    {
+                        VStack
+                        {
+                            ForEach(QuestionType.allCases, id: \.rawValue)
+                            {
+                                item in
+                                Text(item.rawValue)
+                                    .padding(.all)
+                                    .onTapGesture
+                                    {
+                                        self.selectedFilter = item
+                                        withAnimation
+                                        {
+                                            self.isExpanded.toggle()
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+                
+                ForEach(Array(viewModel.getQuestionsForSelection(questiontype: selectedFilter)), id: \.key)
                 {
                     key, value
                     in
@@ -53,35 +79,6 @@ struct QuestionListView: View
                 in
                 QuestionDetailView(question: question, viewModel: viewModel)
             }
-        }
-    }
-}
-
-struct QuestionDetailView: View
-{
-    let question: Question
-    @State private var response: String = ""
-    
-    var viewModel: QuestionListView.ViewModel
-    
-    var body: some View
-    {
-        VStack {
-            Text(question.answer)
-                .font(.body)
-            .padding(.all)
-            TextField("Response", text: $response, axis: .vertical)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.all)
-            HStack
-            {
-                Spacer()
-                Button("Save") {
-                    viewModel.saveResponse(for: question.id, response: response)
-                }
-                .padding(.trailing)
-            }
-            Spacer()
         }
     }
 }

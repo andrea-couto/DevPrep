@@ -14,6 +14,11 @@
 		A10ECDA42932FFF600452D25 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECDA32932FFF600452D25 /* Question.swift */; };
 		A10ECDA62933089C00452D25 /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECDA52933089C00452D25 /* QuestionList.swift */; };
 		A10ECDA82933DF1C00452D25 /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECDA72933DF1C00452D25 /* QuestionListViewModel.swift */; };
+		A10ECDAB293447AF00452D25 /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECDAA293447AF00452D25 /* QuestionDetailView.swift */; };
+		A10ECDAE293448B100452D25 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = A10ECDAD293448B100452D25 /* AlertToast */; };
+		A10ECDB029344C3F00452D25 /* BottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECDAF29344C3F00452D25 /* BottomNav.swift */; };
+		A164AEF829345E9C0053B464 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A164AEF729345E9C0053B464 /* Launch Screen.storyboard */; };
+		A164AEFD2934618D0053B464 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A164AEFC2934618D0053B464 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,10 @@
 		A10ECDA32932FFF600452D25 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A10ECDA52933089C00452D25 /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		A10ECDA72933DF1C00452D25 /* QuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewModel.swift; sourceTree = "<group>"; };
+		A10ECDAA293447AF00452D25 /* QuestionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
+		A10ECDAF29344C3F00452D25 /* BottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNav.swift; sourceTree = "<group>"; };
+		A164AEF729345E9C0053B464 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A164AEFC2934618D0053B464 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10ECDAE293448B100452D25 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +67,10 @@
 		A10ECD942932FD9C00452D25 /* DevPrep */ = {
 			isa = PBXGroup;
 			children = (
-				A10ECDA92933E01700452D25 /* Models */,
-				A10ECD952932FD9C00452D25 /* DevPrepApp.swift */,
-				A10ECD972932FD9C00452D25 /* QuestionListView.swift */,
-				A10ECDA72933DF1C00452D25 /* QuestionListViewModel.swift */,
-				A10ECD992932FD9C00452D25 /* Assets.xcassets */,
-				A10ECD9B2932FD9C00452D25 /* Preview Content */,
+				A10ECDA92933E01700452D25 /* Model */,
+				A164AEF9293461010053B464 /* View */,
+				A164AEFA293461150053B464 /* ViewModel */,
+				A164AEFB2934612D0053B464 /* Supporting Files */,
 			);
 			path = DevPrep;
 			sourceTree = "<group>";
@@ -75,13 +83,43 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A10ECDA92933E01700452D25 /* Models */ = {
+		A10ECDA92933E01700452D25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A10ECDA52933089C00452D25 /* QuestionList.swift */,
 				A10ECDA32932FFF600452D25 /* Question.swift */,
 			);
-			path = Models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A164AEF9293461010053B464 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A10ECD952932FD9C00452D25 /* DevPrepApp.swift */,
+				A10ECD972932FD9C00452D25 /* QuestionListView.swift */,
+				A10ECDAA293447AF00452D25 /* QuestionDetailView.swift */,
+				A164AEFC2934618D0053B464 /* Settings.swift */,
+				A10ECDAF29344C3F00452D25 /* BottomNav.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A164AEFA293461150053B464 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A10ECDA72933DF1C00452D25 /* QuestionListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A164AEFB2934612D0053B464 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A10ECD992932FD9C00452D25 /* Assets.xcassets */,
+				A164AEF729345E9C0053B464 /* Launch Screen.storyboard */,
+				A10ECD9B2932FD9C00452D25 /* Preview Content */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +138,9 @@
 			dependencies = (
 			);
 			name = DevPrep;
+			packageProductDependencies = (
+				A10ECDAD293448B100452D25 /* AlertToast */,
+			);
 			productName = DevPrep;
 			productReference = A10ECD922932FD9C00452D25 /* DevPrep.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +169,9 @@
 				Base,
 			);
 			mainGroup = A10ECD892932FD9C00452D25;
+			packageReferences = (
+				A10ECDAC293448B100452D25 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = A10ECD932932FD9C00452D25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A164AEF829345E9C0053B464 /* Launch Screen.storyboard in Resources */,
 				A10ECD9D2932FD9C00452D25 /* Preview Assets.xcassets in Resources */,
 				A10ECD9A2932FD9C00452D25 /* Assets.xcassets in Resources */,
 			);
@@ -156,8 +201,11 @@
 			files = (
 				A10ECDA42932FFF600452D25 /* Question.swift in Sources */,
 				A10ECDA62933089C00452D25 /* QuestionList.swift in Sources */,
+				A164AEFD2934618D0053B464 /* Settings.swift in Sources */,
 				A10ECD982932FD9C00452D25 /* QuestionListView.swift in Sources */,
+				A10ECDAB293447AF00452D25 /* QuestionDetailView.swift in Sources */,
 				A10ECD962932FD9C00452D25 /* DevPrepApp.swift in Sources */,
+				A10ECDB029344C3F00452D25 /* BottomNav.swift in Sources */,
 				A10ECDA82933DF1C00452D25 /* QuestionListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,10 +334,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DevPrep/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DevPrep/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C6B2867MN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DevPrep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -315,10 +364,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DevPrep/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DevPrep/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C6B2867MN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DevPrep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,6 +409,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A10ECDAC293448B100452D25 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A10ECDAD293448B100452D25 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A10ECDAC293448B100452D25 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A10ECD8A2932FD9C00452D25 /* Project object */;
 }

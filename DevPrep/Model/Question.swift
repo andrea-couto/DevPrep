@@ -8,8 +8,9 @@
 import Foundation
 import SwiftUI
 
-enum QuestionType: String
+enum QuestionType: String, CaseIterable
 {
+    case all = "All"
     case behavioral = "Behavioral"
     case accessibility = "Accessibility"
     case architecture = "Architecture"
@@ -58,6 +59,8 @@ enum QuestionType: String
             return Image(systemName: "touchid")
         case .swift:
             return Image(systemName: "swift")
+        case .all:
+            return Image(systemName: "magazine")
         }
     }
     
@@ -70,4 +73,6 @@ struct Question: Identifiable, Hashable
     let type: QuestionType
     let ask: String
     let answer: String
+    
+    var userAdded = false
 }
