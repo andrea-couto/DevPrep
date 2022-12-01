@@ -25,6 +25,7 @@ enum QuestionType: String, CaseIterable
     case performance = "Performance"
     case security = "Security"
     case swift = "Swift"
+    case dataPersistence = "Data Persistence"
     
     var icon: Image
     {
@@ -59,6 +60,8 @@ enum QuestionType: String, CaseIterable
             return Image(systemName: "touchid")
         case .swift:
             return Image(systemName: "swift")
+        case .dataPersistence:
+            return Image(systemName: "laptopcomputer.and.arrow.down")
         case .all:
             return Image(systemName: "magazine")
         }

@@ -20,6 +20,7 @@ extension QuestionListView
         
         func saveResponse(for id: Int, response: String)
         {
+            guard !response.isEmpty else { return }
             let url = getDocumentsDirectory().appendingPathComponent("QuestionResponseForId\(id).txt")
 
             do {

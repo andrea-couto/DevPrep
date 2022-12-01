@@ -20,7 +20,8 @@ struct QuestionDetailView: View
     
     var body: some View
     {
-        VStack {
+        ScrollView
+        {
             Text(question.ask)
                 .font(.headline)
                 .padding(.all)
