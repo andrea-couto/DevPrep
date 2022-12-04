@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  UserQuestionListView.swift
 //  DevPrep
 //
-//  Created by Andy Couto on 11/26/22.
+//  Created by Andy Couto on 12/1/22.
 //
 
 import SwiftUI
 
-struct QuestionListView: View
+struct UserQuestionListView: View
 {
     @StateObject private var viewModel = ViewModel()
     @State private var isExpanded = false
@@ -73,7 +73,11 @@ struct QuestionListView: View
                     }
                 }
             }
-            .navigationTitle("Questions")
+            .onAppear()
+            {
+                viewModel.refreshQuestions()
+            }
+            .navigationTitle("Your Questions")
             .toolbar {
                 NavigationLink {
                     CreateYourOwnQuestion()
@@ -91,10 +95,8 @@ struct QuestionListView: View
     }
 }
 
-struct ContentView_Previews: PreviewProvider
-{
-    static var previews: some View
-    {
-        QuestionListView()
+struct UserQuestionListView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserQuestionListView()
     }
 }

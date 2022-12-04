@@ -19,6 +19,11 @@
 		A10ECDB029344C3F00452D25 /* BottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECDAF29344C3F00452D25 /* BottomNav.swift */; };
 		A164AEF829345E9C0053B464 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A164AEF729345E9C0053B464 /* Launch Screen.storyboard */; };
 		A164AEFD2934618D0053B464 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A164AEFC2934618D0053B464 /* Settings.swift */; };
+		A185FBF9293969FD007D32FF /* CreateYourOwnQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185FBF8293969FD007D32FF /* CreateYourOwnQuestion.swift */; };
+		A185FBFB29396E62007D32FF /* CreateYourOwnQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185FBFA29396E62007D32FF /* CreateYourOwnQuestionViewModel.swift */; };
+		A185FBFD29396EF8007D32FF /* DocumentDirectoryFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185FBFC29396EF8007D32FF /* DocumentDirectoryFinder.swift */; };
+		A185FBFF2939764B007D32FF /* UserQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185FBFE2939764B007D32FF /* UserQuestionListView.swift */; };
+		A185FC01293976AC007D32FF /* UserQuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185FC00293976AC007D32FF /* UserQuestionListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		A10ECDAF29344C3F00452D25 /* BottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNav.swift; sourceTree = "<group>"; };
 		A164AEF729345E9C0053B464 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A164AEFC2934618D0053B464 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A185FBF8293969FD007D32FF /* CreateYourOwnQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourOwnQuestion.swift; sourceTree = "<group>"; };
+		A185FBFA29396E62007D32FF /* CreateYourOwnQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourOwnQuestionViewModel.swift; sourceTree = "<group>"; };
+		A185FBFC29396EF8007D32FF /* DocumentDirectoryFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDirectoryFinder.swift; sourceTree = "<group>"; };
+		A185FBFE2939764B007D32FF /* UserQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionListView.swift; sourceTree = "<group>"; };
+		A185FC00293976AC007D32FF /* UserQuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,7 @@
 			children = (
 				A10ECDA52933089C00452D25 /* QuestionList.swift */,
 				A10ECDA32932FFF600452D25 /* Question.swift */,
+				A185FBFC29396EF8007D32FF /* DocumentDirectoryFinder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +111,8 @@
 				A10ECDAA293447AF00452D25 /* QuestionDetailView.swift */,
 				A164AEFC2934618D0053B464 /* Settings.swift */,
 				A10ECDAF29344C3F00452D25 /* BottomNav.swift */,
+				A185FBF8293969FD007D32FF /* CreateYourOwnQuestion.swift */,
+				A185FBFE2939764B007D32FF /* UserQuestionListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				A10ECDA72933DF1C00452D25 /* QuestionListViewModel.swift */,
+				A185FBFA29396E62007D32FF /* CreateYourOwnQuestionViewModel.swift */,
+				A185FC00293976AC007D32FF /* UserQuestionListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -203,10 +218,15 @@
 				A10ECDA62933089C00452D25 /* QuestionList.swift in Sources */,
 				A164AEFD2934618D0053B464 /* Settings.swift in Sources */,
 				A10ECD982932FD9C00452D25 /* QuestionListView.swift in Sources */,
+				A185FBFB29396E62007D32FF /* CreateYourOwnQuestionViewModel.swift in Sources */,
+				A185FBFD29396EF8007D32FF /* DocumentDirectoryFinder.swift in Sources */,
+				A185FC01293976AC007D32FF /* UserQuestionListViewModel.swift in Sources */,
+				A185FBF9293969FD007D32FF /* CreateYourOwnQuestion.swift in Sources */,
 				A10ECDAB293447AF00452D25 /* QuestionDetailView.swift in Sources */,
 				A10ECD962932FD9C00452D25 /* DevPrepApp.swift in Sources */,
 				A10ECDB029344C3F00452D25 /* BottomNav.swift in Sources */,
 				A10ECDA82933DF1C00452D25 /* QuestionListViewModel.swift in Sources */,
+				A185FBFF2939764B007D32FF /* UserQuestionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

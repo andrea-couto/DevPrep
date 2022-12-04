@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum QuestionType: String, CaseIterable
+enum QuestionType: String, CaseIterable, Codable
 {
     case all = "All"
     case behavioral = "Behavioral"
@@ -26,6 +26,7 @@ enum QuestionType: String, CaseIterable
     case security = "Security"
     case swift = "Swift"
     case dataPersistence = "Data Persistence"
+    case networking = "Networking"
     
     var icon: Image
     {
@@ -62,6 +63,8 @@ enum QuestionType: String, CaseIterable
             return Image(systemName: "swift")
         case .dataPersistence:
             return Image(systemName: "laptopcomputer.and.arrow.down")
+        case .networking:
+            return Image(systemName: "network")
         case .all:
             return Image(systemName: "magazine")
         }
@@ -70,7 +73,7 @@ enum QuestionType: String, CaseIterable
     // TODO: Color
 }
 
-struct Question: Identifiable, Hashable
+struct Question: Identifiable, Hashable, Codable
 {
     let id: Int
     let type: QuestionType

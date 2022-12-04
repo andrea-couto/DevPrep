@@ -15,6 +15,11 @@ struct BottomNav: View {
                     Image(systemName: "questionmark.circle.fill")
                     Text("Questions")
             }
+            UserQuestionListView()
+                .tabItem {
+                    Image(systemName: "person.fill.questionmark")
+                    Text("Your Questions")
+            }
             Settings()
                 .tabItem {
                     Image(systemName: "gear.circle.fill")

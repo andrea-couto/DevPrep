@@ -16,7 +16,7 @@ struct Settings: View
         NavigationView {
             Form {
                 Toggle(isOn: $showDescription) {
-                    Text("Show Question descriptions")
+                    Text("Show question descriptions")
                 }
                 .tint(Color("devPrepDarkGreen"))
             }

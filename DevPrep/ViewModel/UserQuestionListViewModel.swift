@@ -1,30 +1,34 @@
 //
-//  QuestionListViewModel.swift
+//  UserQuestionListViewModel.swift
 //  DevPrep
 //
-//  Created by Andy Couto on 11/27/22.
+//  Created by Andy Couto on 12/1/22.
 //
 
 import Foundation
-import SwiftUI
 
-extension QuestionListView
+extension UserQuestionListView
 {
-    
-    /// The main actor is responsible for running all user interface updates, and adding that attribute to the class means we want all its code – any time it runs anything, unless we specifically ask otherwise – to run on that main actor.
-    /// we’re telling Swift every part of this class should run on the main actor, so it’s safe to update the UI, no matter where it’s used.
     @MainActor class ViewModel: ObservableObject, DocumentDirectoryFinder
     {
-        // var questions: [Question] = QuestionList.questions
-        var groupedQuestions: Dictionary<String, [Question]> = QuestionList.groupedQuestions
+        @Published var questions: [Question] = []
+        
+        var groupedQuestions: Dictionary<String, [Question]>
+        {
+            return Dictionary(grouping: questions, by: { $0.type.rawValue })
+        }
+        
+        func refreshQuestions()
+        {
+            questions = getQuestionList()
+        }
         
         func saveResponse(for id: Int, response: String)
         {
             guard !response.isEmpty else { return }
             createFolderIfNeeded()
-            let dirPath = getDocumentsDirectory().appendingPathComponent("QuestionResponses", isDirectory: true)
+            let dirPath = getDocumentsDirectory().appendingPathComponent("CustomQuestionResponses", isDirectory: true)
             let url = dirPath.appendingPathComponent("QuestionResponseForId\(id).txt")
-
             do {
                 try response.write(to: url, atomically: true, encoding: .utf8)
                 let input = try String(contentsOf: url)
@@ -43,24 +47,40 @@ extension QuestionListView
         
         func getResponse(for id: Int) -> String?
         {
-            let dirPath = getDocumentsDirectory().appendingPathComponent("QuestionResponses", isDirectory: true)
+            let dirPath = getDocumentsDirectory().appendingPathComponent("CustomQuestionResponses", isDirectory: true)
             let filePath = dirPath.appendingPathComponent("QuestionResponseForId\(id).txt")
-            if FileManager.default.fileExists(atPath: dirPath.path)
+            do {
+                let response = try String(contentsOf: filePath, encoding: .utf8)
+                return response
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
+        }
+        
+        private func getQuestionList() -> [Question]
+        {
+            let dirPath = getDocumentsDirectory().appendingPathComponent("CustomQuestions", isDirectory: true)
+            let dirContents = try? FileManager.default.contentsOfDirectory(atPath: dirPath.path)
+            
+            var quests = [Question]()
+            let decoder = JSONDecoder()
+            for filePath in dirContents ?? []
             {
-                do {
-                    let response = try String(contentsOf: filePath, encoding: .utf8)
-                    return response
-                } catch {
-                    print(error.localizedDescription)
-                    return nil
+                if let data = try? Data(contentsOf: dirPath.appendingPathComponent(filePath))
+                {
+                    if let question = try? decoder.decode(Question.self, from: data)
+                    {
+                        quests.append(question)
+                    }
                 }
             }
-            return nil
+            return quests
         }
         
         private func createFolderIfNeeded()
         {
-            let dirPath = getDocumentsDirectory().appendingPathComponent("QuestionResponses", isDirectory: true)
+            let dirPath = getDocumentsDirectory().appendingPathComponent("CustomQuestionResponses", isDirectory: true)
             if !FileManager.default.fileExists(atPath: dirPath.path)
             {
                 do
@@ -77,4 +97,3 @@ extension QuestionListView
         }
     }
 }
-
