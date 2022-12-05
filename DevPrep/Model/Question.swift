@@ -27,6 +27,7 @@ enum QuestionType: String, CaseIterable, Codable
     case swift = "Swift"
     case dataPersistence = "Data Persistence"
     case networking = "Networking"
+    case tooling = "Tooling"
     
     var icon: Image
     {
@@ -65,6 +66,8 @@ enum QuestionType: String, CaseIterable, Codable
             return Image(systemName: "laptopcomputer.and.arrow.down")
         case .networking:
             return Image(systemName: "network")
+        case .tooling:
+            return Image(systemName: "pencil.and.ruler")
         case .all:
             return Image(systemName: "magazine")
         }
